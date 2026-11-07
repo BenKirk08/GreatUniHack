@@ -1,0 +1,134 @@
+{
+  "id": "safe-account",
+  "title": "Safe account — fake Northgate fraud team",
+  "summary": "A caller posing as Northgate's fraud department tells Ben his account has been hacked and pushes him to move his savings to a 'safe account'. Ben taps Use AI voice; the AI voice carries on as him and gets the payee: the seeded mule account of Daniel Price.",
+  "uses_mule": true,
+  "expect": {
+    "scam_type": "safe_account",
+    "mule": "match",
+    "sort_code": "99-50-17",
+    "account_number": "41873026"
+  },
+  "caller_number": "+447700900481",
+  "screening": [
+    {
+      "speaker": "caller",
+      "text": "Good afternoon, am I speaking with Ben? This is Mark Davies from the Northgate Bank fraud department."
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, this is Ben. What's this about?"
+    },
+    {
+      "speaker": "caller",
+      "text": "We've detected two suspicious payments of nine hundred pounds leaving your current account this morning. Did you authorise those?"
+    },
+    {
+      "speaker": "customer",
+      "text": "No, I didn't. That's worrying."
+    },
+    {
+      "speaker": "caller",
+      "text": "Don't worry, we can protect your money, but we need to act right now before they empty your savings."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. What do I need to do?"
+    },
+    {
+      "speaker": "caller",
+      "text": "We're going to move your money into a secure safe account in your name while we investigate."
+    },
+    {
+      "speaker": "customer",
+      "text": "A safe account? Is that normal?"
+    },
+    {
+      "speaker": "caller",
+      "text": "It's completely standard. But you mustn't tell anyone at your branch, because we think a member of staff there is involved."
+    },
+    {
+      "speaker": "customer",
+      "text": "Right. How much are we talking about?"
+    },
+    {
+      "speaker": "caller",
+      "text": "Everything in your savings. Log into your banking app now while I stay on the line and I'll give you the new account details."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hang on, let me find a pen."
+    }
+  ],
+  "takeover": [
+    {
+      "role": "persona",
+      "message": "Sorry, are you still there? The line went funny for a second. You said you're from the Northgate fraud department?"
+    },
+    {
+      "role": "caller",
+      "message": "Yes, Mark Davies, Northgate fraud department. Have you got that pen, Ben?"
+    },
+    {
+      "role": "persona",
+      "message": "Yes, got one now. Mark Davies, was it? Hold on, writing that down.",
+      "record_details": {
+        "claimed_organisation": "Northgate Bank fraud department",
+        "caller_name": "Mark Davies",
+        "reason_given": "Two suspicious £900 payments left Ben's account"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Ben, your savings are at risk. We need to move four thousand eight hundred pounds to a secure safe account today."
+    },
+    {
+      "role": "persona",
+      "message": "Four thousand eight hundred! Where's it got to go?",
+      "record_details": {
+        "amount": "£4,800",
+        "requested_action": "Move Ben's savings to a 'secure safe account' today"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "The account is in the name of Daniel Price, our senior protection officer. The sort code is nine nine, five zero, one seven."
+    },
+    {
+      "role": "persona",
+      "message": "Daniel Price. Nine, nine, five, zero, one, seven. And the account number?"
+    },
+    {
+      "role": "caller",
+      "message": "Four one eight seven, three zero two six."
+    },
+    {
+      "role": "persona",
+      "message": "Four, one, eight, seven, three, zero, two, six. Hold on, writing that down.",
+      "record_details": {
+        "payee_name": "Daniel Price",
+        "sort_code": "995017",
+        "account_number": "41873026"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Perfect. Make the transfer now while I wait, Ben."
+    },
+    {
+      "role": "persona",
+      "message": "The app's just spinning... oh, it says error. Can I ring you back?"
+    },
+    {
+      "role": "caller",
+      "message": "Call me back on zero two zero, seven nine four six, zero three one four. It has to be today."
+    },
+    {
+      "role": "persona",
+      "message": "Zero two zero, seven nine four six, zero three one four. Okay, I'll ring you back shortly.",
+      "record_details": {
+        "callback_number": "02079460314"
+      }
+    }
+  ]
+}

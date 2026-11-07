@@ -1,0 +1,22 @@
+{
+  "id": "dentist-reminder",
+  "title": "Benign — dental appointment reminder",
+  "summary": "Ben's dental practice rings to confirm a check-up. An ordinary call: it must never be offered for takeover and gets no report.",
+  "benign": true,
+  "uses_mule": false,
+  "caller_number": "+447700900135",
+  "screening": [
+    { "speaker": "caller", "text": "Hi, is that Ben? It's Chloe calling from Harbour Street Dental." },
+    { "speaker": "customer", "text": "Hi Chloe, yes it's Ben." },
+    { "speaker": "caller", "text": "I'm just ringing to remind you about your check-up with Doctor Shah on Tuesday at ten past nine." },
+    { "speaker": "customer", "text": "Oh yes, thanks for the reminder." },
+    { "speaker": "caller", "text": "Can you still make that time, or would you like to move it?" },
+    { "speaker": "customer", "text": "Tuesday at ten past nine is fine." },
+    { "speaker": "caller", "text": "Lovely. If you've started any new medication since your last visit, could you bring a list along?" },
+    { "speaker": "customer", "text": "Will do. Nothing new really." },
+    { "speaker": "caller", "text": "Great. If anything changes, just give reception a ring on the number on your appointment card." },
+    { "speaker": "customer", "text": "Perfect, thanks Chloe. See you Tuesday." },
+    { "speaker": "caller", "text": "See you then, have a good afternoon. Bye now." }
+  ],
+  "takeover": []
+}

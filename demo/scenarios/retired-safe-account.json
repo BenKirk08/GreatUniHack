@@ -1,0 +1,128 @@
+{
+  "id": "retired-safe-account",
+  "title": "Retired customer: card 'cloned', pension to a safe account (older male voice inferred)",
+  "summary": "A caller posing as Northgate's security team tells Ben, a 76-year-old retired bus driver, that his card has been cloned and his pension must go to a 'safe account'. Ben mentions his age and retirement on the call, so with no AI voice match setting the older male voice is inferred. The payee is Jordan Hale, the second seeded mule account.",
+  "uses_mule": true,
+  "expect": {
+    "ai_voice": "older_male",
+    "ai_voice_source": "inferred",
+    "scam_type": "safe_account",
+    "mule": "match",
+    "sort_code": "99-50-42",
+    "account_number": "63019458"
+  },
+  "caller_number": "+447700900634",
+  "screening": [
+    {
+      "speaker": "caller",
+      "text": "Good morning, am I speaking with Ben, the account holder?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, speaking. I don't usually answer numbers I don't know, not at seventy-six."
+    },
+    {
+      "speaker": "caller",
+      "text": "This is Gary Holt from Northgate Bank's security team. Your debit card has been cloned and used in a shop in Birmingham this morning."
+    },
+    {
+      "speaker": "customer",
+      "text": "Birmingham? I haven't been further than Wigan since I retired from the buses."
+    },
+    {
+      "speaker": "caller",
+      "text": "That's why we're calling, sir. The criminals are trying to get at your pension, so we need to move it to a safe account in your name today."
+    },
+    {
+      "speaker": "customer",
+      "text": "My pension? It's just my state pension and a bit of savings."
+    },
+    {
+      "speaker": "caller",
+      "text": "Exactly what they're after. Don't tell anyone at your branch, a member of staff there is under investigation."
+    },
+    {
+      "speaker": "customer",
+      "text": "Oh dear. My late wife always did the banking, I'm not much good with it."
+    },
+    {
+      "speaker": "caller",
+      "text": "Don't worry, I'll talk you through it. Get your banking app open and I'll give you the safe account details."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hang on, let me find my reading glasses."
+    }
+  ],
+  "takeover": [
+    {
+      "role": "persona",
+      "message": "Hello? Are you still there? This phone does funny things. You said you're from Northgate Bank's security team?"
+    },
+    {
+      "role": "caller",
+      "message": "Yes sir, Gary Holt, Northgate security. Have you got the app open?"
+    },
+    {
+      "role": "persona",
+      "message": "Gary Holt. Let me write that in my notebook first.",
+      "record_details": {
+        "claimed_organisation": "Northgate Bank security team",
+        "caller_name": "Gary Holt",
+        "reason_given": "Debit card 'cloned' and used in Birmingham; pension at risk"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "We need to move two thousand nine hundred pounds to the safe account this morning."
+    },
+    {
+      "role": "persona",
+      "message": "Two thousand nine hundred. And where does it go, exactly?",
+      "record_details": {
+        "amount": "£2,900",
+        "requested_action": "Move his pension savings to a 'safe account' today; tell no one at the branch"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "The account is in the name of Jordan Hale, our protection officer. Sort code nine nine, five zero, four two."
+    },
+    {
+      "role": "persona",
+      "message": "Jordan Hale. Nine, nine, five, zero, four, two. And the account number?"
+    },
+    {
+      "role": "caller",
+      "message": "Six three zero one, nine four five eight."
+    },
+    {
+      "role": "persona",
+      "message": "Six, three, zero, one, nine, four, five, eight. Let me read that back slowly.",
+      "record_details": {
+        "payee_name": "Jordan Hale",
+        "sort_code": "995042",
+        "account_number": "63019458"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "That's right. Press send now, sir."
+    },
+    {
+      "role": "persona",
+      "message": "It's come up with an error. Is there a number I can ring you back on?"
+    },
+    {
+      "role": "caller",
+      "message": "Ring me on zero two zero, seven nine four six, zero six two one. It has to be today."
+    },
+    {
+      "role": "persona",
+      "message": "Zero two zero, seven nine four six, zero six two one. Right you are, I'll ring after my dinner.",
+      "record_details": {
+        "callback_number": "02079460621"
+      }
+    }
+  ]
+}

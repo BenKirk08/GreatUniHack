@@ -1,0 +1,134 @@
+{
+  "id": "grandchild-emergency",
+  "title": "Family emergency — 'Ben, it's Jamie, I've been arrested'",
+  "summary": "The caller pretends to be Ben's little brother Jamie, arrested after a car crash, then hands over to a 'duty solicitor' who demands £3,500 bail within the hour. The AI voice takes over as Ben and gets the payee: Jordan Hale, the second seeded mule account.",
+  "uses_mule": true,
+  "expect": {
+    "scam_type": "family_emergency",
+    "mule": "match",
+    "sort_code": "99-50-42",
+    "account_number": "63019458"
+  },
+  "caller_number": "+447700900364",
+  "screening": [
+    {
+      "speaker": "caller",
+      "text": "Ben? Ben, it's me, it's Jamie. I'm in real trouble and I didn't know who else to call."
+    },
+    {
+      "speaker": "customer",
+      "text": "Jamie? You sound different. What's happened?"
+    },
+    {
+      "speaker": "caller",
+      "text": "I've been crying. I crashed the car and the police have arrested me. Please don't tell Mum, she'll kill me."
+    },
+    {
+      "speaker": "customer",
+      "text": "Arrested? Are you hurt?"
+    },
+    {
+      "speaker": "caller",
+      "text": "I'm okay, but I need help right now. My solicitor is here, he'll explain. Please, Ben."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay, put him on."
+    },
+    {
+      "speaker": "caller",
+      "text": "Good afternoon, my name is Andrew Collins, I'm the duty solicitor representing your brother Jamie."
+    },
+    {
+      "speaker": "customer",
+      "text": "Is he going to be alright?"
+    },
+    {
+      "speaker": "caller",
+      "text": "Bail has been set at three thousand five hundred pounds. If it isn't paid within the hour he'll be held overnight in the cells."
+    },
+    {
+      "speaker": "customer",
+      "text": "Three and a half thousand? Within the hour?"
+    },
+    {
+      "speaker": "caller",
+      "text": "There's a reporting restriction on the case, so you mustn't discuss this with anyone, not even your parents. You'll need to make a bank transfer straight away."
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay, okay. Give me a second."
+    }
+  ],
+  "takeover": [
+    {
+      "role": "persona",
+      "message": "Sorry, are you still there? The line went funny. You're the solicitor?"
+    },
+    {
+      "role": "caller",
+      "message": "Yes, Andrew Collins, duty solicitor. Jamie needs his bail paid within the hour."
+    },
+    {
+      "role": "persona",
+      "message": "Andrew Collins, right. Sorry, I just need to write this down properly. Which police station is he at?",
+      "record_details": {
+        "claimed_organisation": "Duty solicitor for Ben's brother 'Jamie'",
+        "caller_name": "Andrew Collins",
+        "reason_given": "Jamie arrested after a car crash; bail of £3,500 within the hour"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "He's at the central station. Bail is three thousand five hundred pounds and it has to go by bank transfer to the bail bond agent."
+    },
+    {
+      "role": "persona",
+      "message": "Three thousand five hundred, by bank transfer. Who exactly does it go to? I want to get every detail right.",
+      "record_details": {
+        "amount": "£3,500",
+        "requested_action": "Pay Jamie's 'bail' by bank transfer within the hour; tell no one"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "The account is in the name of Jordan Hale, the bail agent. Sort code nine nine, five zero, four two."
+    },
+    {
+      "role": "persona",
+      "message": "Jordan Hale. Nine, nine, five, zero, four, two. And the account number?"
+    },
+    {
+      "role": "caller",
+      "message": "Six three zero one, nine four five eight."
+    },
+    {
+      "role": "persona",
+      "message": "Six, three, zero, one, nine, four, five, eight. Let me read that all back to be sure.",
+      "record_details": {
+        "payee_name": "Jordan Hale",
+        "sort_code": "995042",
+        "account_number": "63019458"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "That's correct. Please hurry, Ben."
+    },
+    {
+      "role": "persona",
+      "message": "The app is asking me security questions I can't remember. Can I call you straight back on a direct number?"
+    },
+    {
+      "role": "caller",
+      "message": "Ring me on zero seven seven zero zero, nine zero zero, four one two. Jamie is counting on you."
+    },
+    {
+      "role": "persona",
+      "message": "Zero seven seven zero zero, nine zero zero, four one two. Got it. I'll ring you right back.",
+      "record_details": {
+        "callback_number": "07700900412"
+      }
+    }
+  ]
+}

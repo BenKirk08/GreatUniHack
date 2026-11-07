@@ -1,0 +1,118 @@
+{
+  "id": "courier",
+  "title": "Courier fraud — fake police detective",
+  "summary": "A caller posing as a Metropolitan Police detective says Ben's bank branch is corrupt and asks him to withdraw £3,000 in cash for a courier to collect as 'evidence'. Ben taps Use AI voice and the AI voice carries on as him. No bank account is given.",
+  "uses_mule": false,
+  "expect": {
+    "scam_type": "courier",
+    "mule": null
+  },
+  "caller_number": "+447700900652",
+  "screening": [
+    {
+      "speaker": "caller",
+      "text": "Hello, is that Ben? This is Detective Constable Paul Harris from the Metropolitan Police fraud squad."
+    },
+    {
+      "speaker": "customer",
+      "text": "The police? Yes, this is Ben."
+    },
+    {
+      "speaker": "caller",
+      "text": "Nothing to worry about, but we've arrested a man who had your bank card details on him."
+    },
+    {
+      "speaker": "customer",
+      "text": "Oh no. What does that mean for me?"
+    },
+    {
+      "speaker": "caller",
+      "text": "We believe staff at your bank branch are involved. We need your help with an undercover investigation."
+    },
+    {
+      "speaker": "customer",
+      "text": "What kind of help?"
+    },
+    {
+      "speaker": "caller",
+      "text": "We need you to withdraw three thousand pounds in cash. If the cashier asks, say it's for building work."
+    },
+    {
+      "speaker": "customer",
+      "text": "Lie to the bank?"
+    },
+    {
+      "speaker": "caller",
+      "text": "A courier from our team will collect the cash from your home this afternoon as evidence. It goes back into your account in forty eight hours."
+    },
+    {
+      "speaker": "customer",
+      "text": "A courier is coming to my house?"
+    },
+    {
+      "speaker": "caller",
+      "text": "This is a confidential operation, so don't tell anyone, not even your family. Can you get to the branch now?"
+    }
+  ],
+  "takeover": [
+    {
+      "role": "persona",
+      "message": "Sorry, are you still there? Lost you for a second. You said you're from the Metropolitan Police?"
+    },
+    {
+      "role": "caller",
+      "message": "That's right, Detective Constable Paul Harris, fraud squad. Can you hear me now, Ben?"
+    },
+    {
+      "role": "persona",
+      "message": "Yes, sorry. Detective Constable Paul Harris? Hold on, writing that down.",
+      "record_details": {
+        "claimed_organisation": "Metropolitan Police fraud squad",
+        "caller_name": "DC Paul Harris",
+        "reason_given": "Investigation into corrupt bank staff; Ben's card details found on an arrested man"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Ben, we need three thousand pounds in cash withdrawn today for our investigation."
+    },
+    {
+      "role": "persona",
+      "message": "Three thousand pounds in cash. And what do I do with it once I've got it?",
+      "record_details": {
+        "amount": "£3,000",
+        "requested_action": "Withdraw £3,000 cash, lie to the cashier it's for building work"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Put it in an envelope. A courier will collect it from the house this afternoon. The password is bluebell."
+    },
+    {
+      "role": "persona",
+      "message": "A courier this afternoon, password bluebell. Let me jot that down.",
+      "record_details": {
+        "requested_action": "Hand £3,000 cash in an envelope to a 'police courier' at the house; password 'bluebell'; tell no one"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Exactly. And don't mention this to anyone at the bank."
+    },
+    {
+      "role": "persona",
+      "message": "I can't get to the branch till later on. Is there a number I can ring you on?"
+    },
+    {
+      "role": "caller",
+      "message": "Call me directly on zero two zero, seven nine four six, zero five five five. It has to be today."
+    },
+    {
+      "role": "persona",
+      "message": "Zero two zero, seven nine four six, zero five five five. Got it, Detective.",
+      "record_details": {
+        "callback_number": "02079460555"
+      }
+    }
+  ]
+}

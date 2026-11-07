@@ -1,0 +1,130 @@
+{
+  "id": "investment",
+  "title": "Crypto investment — guaranteed returns",
+  "summary": "A caller from 'Sterling Crest Capital' promises Ben 40% guaranteed returns, wants AnyDesk installed and £2,500 sent to 'Sarah Mitchell'. The AI voice takes over as Ben. Northgate has a customer called Sarah Mitchell but the account differs: a low-confidence name-only warning.",
+  "uses_mule": false,
+  "expect": {
+    "scam_type": "investment",
+    "mule": "name_only",
+    "sort_code": "99-83-06",
+    "account_number": "73946102"
+  },
+  "caller_number": "+447700900918",
+  "screening": [
+    {
+      "speaker": "caller",
+      "text": "Hi, is that Ben? It's Ryan from Sterling Crest Capital. You registered interest in our crypto fund and I've got brilliant news."
+    },
+    {
+      "speaker": "customer",
+      "text": "Did I? I don't remember that."
+    },
+    {
+      "speaker": "caller",
+      "text": "Our fund is returning forty percent a year, guaranteed. People are doubling their savings in two years."
+    },
+    {
+      "speaker": "customer",
+      "text": "Forty percent guaranteed? That sounds too good."
+    },
+    {
+      "speaker": "caller",
+      "text": "It's real, but this round closes at five o'clock today, so you need to move fast."
+    },
+    {
+      "speaker": "customer",
+      "text": "What would I need to do?"
+    },
+    {
+      "speaker": "caller",
+      "text": "The minimum is two and a half thousand pounds. First I'll need you to install an app called AnyDesk so I can set up your wallet for you."
+    },
+    {
+      "speaker": "customer",
+      "text": "I'm not sure about letting someone into my computer."
+    },
+    {
+      "speaker": "caller",
+      "text": "Everyone does it, it's totally safe. And don't listen to your bank if they ask questions, they hate it when customers make real money."
+    },
+    {
+      "speaker": "customer",
+      "text": "Hmm. Let me think."
+    },
+    {
+      "speaker": "caller",
+      "text": "Don't think too long, the spaces are nearly gone. I can take the transfer details now."
+    }
+  ],
+  "takeover": [
+    {
+      "role": "persona",
+      "message": "Sorry, are you still there? My phone just went funny. You're from Sterling Crest Capital, yeah?"
+    },
+    {
+      "role": "caller",
+      "message": "That's right, Ryan from Sterling Crest Capital. So, are you ready to get started?"
+    },
+    {
+      "role": "persona",
+      "message": "Forty percent, you said? Ryan, right? Hang on, writing this down.",
+      "record_details": {
+        "claimed_organisation": "Sterling Crest Capital",
+        "caller_name": "Ryan",
+        "reason_given": "Guaranteed 40% annual return on a crypto fund; offer closes today"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Exactly. Minimum two and a half thousand. Install AnyDesk and I'll set up your wallet."
+    },
+    {
+      "role": "persona",
+      "message": "I'm hopeless with wallets, I forgot my last password! Can I just send the money instead?",
+      "record_details": {
+        "amount": "£2,500",
+        "requested_action": "Install AnyDesk remote access and invest £2,500"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Sure. Transfer it to our account manager, Sarah Mitchell. Sort code nine nine, eight three, zero six."
+    },
+    {
+      "role": "persona",
+      "message": "Sarah Mitchell. Nine, nine, eight, three, zero, six. And the account number?"
+    },
+    {
+      "role": "caller",
+      "message": "Seven three nine four, six one zero two."
+    },
+    {
+      "role": "persona",
+      "message": "Seven, three, nine, four, six, one, zero, two. Is that right? I'm reading it back so I don't mess it up.",
+      "record_details": {
+        "payee_name": "Sarah Mitchell",
+        "sort_code": "998306",
+        "account_number": "73946102"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Perfect, do it now and I'll send you a certificate."
+    },
+    {
+      "role": "persona",
+      "message": "Argh, the security code isn't coming through and I'm on two percent battery. What number can I call you back on?"
+    },
+    {
+      "role": "caller",
+      "message": "Ring me on zero seven seven zero zero, nine zero zero, seven seven one. Don't leave it too long."
+    },
+    {
+      "role": "persona",
+      "message": "Zero seven seven zero zero, nine zero zero, seven seven one. Amazing, speak soon!",
+      "record_details": {
+        "callback_number": "07700900771"
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["dub1"],
+  "crons": [{ "path": "/api/cron/voice-twin-purge", "schedule": "17 4 * * *" }]
+}

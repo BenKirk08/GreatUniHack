@@ -1,0 +1,11 @@
+# Never upload secrets or local artefacts to Vercel
+granny-agent-spec*.md
+.env
+.env.*
+!.env.example
+node_modules
+.next
+coverage
+.vercel
+*.log
+scripts/dev

@@ -1,0 +1,130 @@
+{
+  "id": "hmrc",
+  "title": "HMRC — unpaid tax and arrest threat",
+  "summary": "A caller claiming to be from HMRC tells Ben he owes £1,960 and will be arrested tonight unless he pays an 'HMRC settlement' account at another bank. The AI voice takes over as Ben and gets the payee.",
+  "uses_mule": false,
+  "expect": {
+    "scam_type": "hmrc",
+    "mule": "no_match",
+    "sort_code": "99-71-24",
+    "account_number": "19283746"
+  },
+  "caller_number": "+447700900237",
+  "screening": [
+    {
+      "speaker": "caller",
+      "text": "Hello, this is Officer Steven Clarke from HMRC, the tax investigations unit. Am I speaking with Ben?"
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes. Is something wrong?"
+    },
+    {
+      "speaker": "caller",
+      "text": "This is a final notice about an unpaid tax liability in your name. Our records show you underpaid tax for the last three years."
+    },
+    {
+      "speaker": "customer",
+      "text": "I don't think so. My tax is done through work."
+    },
+    {
+      "speaker": "caller",
+      "text": "The outstanding amount with penalties is one thousand nine hundred and sixty pounds."
+    },
+    {
+      "speaker": "customer",
+      "text": "That can't be right."
+    },
+    {
+      "speaker": "caller",
+      "text": "Sir, if this isn't settled today a warrant will be issued for your arrest and officers will attend your address this evening."
+    },
+    {
+      "speaker": "customer",
+      "text": "Arrest? For tax?"
+    },
+    {
+      "speaker": "caller",
+      "text": "You must make a payment to the HMRC settlement account immediately, and don't tell anyone, this is a confidential legal matter."
+    },
+    {
+      "speaker": "customer",
+      "text": "I need to check this with someone."
+    },
+    {
+      "speaker": "caller",
+      "text": "There is no time. Stay on the line and do the transfer now or the warrant goes ahead."
+    }
+  ],
+  "takeover": [
+    {
+      "role": "persona",
+      "message": "Sorry, are you still there? Lost you for a second. You said you're from HMRC?"
+    },
+    {
+      "role": "caller",
+      "message": "Yes, Officer Steven Clarke, HMRC tax investigations. You owe one thousand nine hundred and sixty pounds."
+    },
+    {
+      "role": "persona",
+      "message": "Steven Clarke. Clarke with an E? Hang on, let me find the right letter. I'll want a reference number.",
+      "record_details": {
+        "claimed_organisation": "HM Revenue and Customs (HMRC)",
+        "caller_name": "Steven Clarke",
+        "reason_given": "Unpaid tax; threatened arrest warrant tonight"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Case reference HM four four seven. It must be paid today to avoid arrest."
+    },
+    {
+      "role": "persona",
+      "message": "HM four four seven. Right, I've written that down. And where's this money supposed to go?",
+      "record_details": {
+        "amount": "£1,960",
+        "requested_action": "Pay £1,960 to an 'HMRC settlement account' today; keep it confidential"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "The account name is HMRC Settlement Services. Sort code nine nine, seven one, two four."
+    },
+    {
+      "role": "persona",
+      "message": "HMRC Settlement Services. Nine, nine, seven, one, two, four. Account number?"
+    },
+    {
+      "role": "caller",
+      "message": "One nine two eight, three seven four six."
+    },
+    {
+      "role": "persona",
+      "message": "One, nine, two, eight, three, seven, four, six. Let me read that back properly.",
+      "record_details": {
+        "payee_name": "HMRC Settlement Services",
+        "sort_code": "997124",
+        "account_number": "19283746"
+      }
+    },
+    {
+      "role": "caller",
+      "message": "Correct. Make the transfer now and read me the confirmation number."
+    },
+    {
+      "role": "persona",
+      "message": "The banking app's logged me out again. Give me a number to ring you back on."
+    },
+    {
+      "role": "caller",
+      "message": "Call the enforcement desk on zero two zero, seven nine four six, zero eight eight two. You have one hour."
+    },
+    {
+      "role": "persona",
+      "message": "Zero two zero, seven nine four six, zero eight eight two. Right you are.",
+      "record_details": {
+        "callback_number": "02079460882"
+      }
+    }
+  ]
+}
